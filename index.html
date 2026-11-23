@@ -4,227 +4,473 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clima Premium | Climatização</title>
-<meta name="description" content="Soluções em instalação, manutenção e limpeza de ar-condicionado. Solicite seu orçamento.">
+<meta name="theme-color" content="#071315">
+<title>Clima Premium | Climatização em Toledo</title>
+<meta name="description" content="Instalação, manutenção e higienização de ar-condicionado em Toledo e região. Solicite seu orçamento.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+:root {
+  --bg:#071315;
+  --bg2:#0d2022;
+  --card:#112629;
+  --mint:#56e0c2;
+  --white:#f5f8f7;
+  --muted:#a8b9b7;
 }
 
-html { scroll-behavior: smooth; }
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html { scroll-behavior:smooth; }
 
 body {
-  background: #080f12;
-  color: #fff;
+  background:var(--bg);
+  color:var(--white);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+}
+
+a { text-decoration:none; }
+
+.container {
+  width:min(1160px,90%);
+  margin:auto;
 }
 
 header {
-  height: 82px;
-  padding: 0 8%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #ffffff18;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(7,19,21,.93);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid #ffffff12;
+}
+
+.nav {
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: 2px;
+  font-family:Manrope,sans-serif;
+  font-size:21px;
+  font-weight:800;
+  letter-spacing:1px;
+  color:white;
 }
 
-.logo span { color: #26c6b5; }
+.logo span { color:var(--mint); }
 
-nav {
-  display: flex;
-  gap: 30px;
+.menu {
+  display:flex;
+  align-items:center;
+  gap:32px;
 }
 
-nav a {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 14px;
+.menu a {
+  color:#bdc9c7;
+  font-size:13px;
+  transition:.3s;
 }
 
-nav a:hover { color: #26c6b5; }
+.menu a:hover { color:var(--mint); }
+
+.nav-button {
+  background:var(--mint);
+  color:#061716!important;
+  padding:13px 19px;
+  border-radius:4px;
+  font-weight:800;
+}
 
 .hero {
-  min-height: 620px;
-  padding: 100px 8%;
-  display: flex;
-  align-items: center;
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
   background:
-    radial-gradient(ellipse at 80% 50%, #12665c55, transparent 45%),
-    linear-gradient(120deg, #081114, #102629);
+    linear-gradient(90deg,rgba(4,15,17,.96) 0%,rgba(4,15,17,.82) 48%,rgba(4,15,17,.2) 100%),
+    url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1900&q=85') center/cover;
 }
 
-.hero-content { max-width: 680px; }
-
-.tag {
-  color: #26c6b5;
-  letter-spacing: 3px;
-  font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 25px;
+.hero:after {
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:130px;
+  background:linear-gradient(transparent,var(--bg));
 }
 
-h1 {
-  font-size: clamp(42px, 7vw, 76px);
-  line-height: 1.08;
-  margin-bottom: 25px;
+.hero-content {
+  position:relative;
+  z-index:2;
+  padding:110px 0 140px;
+  max-width:680px;
 }
 
-h1 span { color: #26c6b5; }
+.eyebrow {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--mint);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:26px;
+}
+
+.eyebrow:before {
+  content:"";
+  width:32px;
+  height:1px;
+  background:var(--mint);
+}
+
+h1,h2,h3 {
+  font-family:Manrope,sans-serif;
+}
+
+.hero h1 {
+  font-size:clamp(42px,7vw,76px);
+  line-height:1.08;
+  letter-spacing:-3px;
+  margin-bottom:24px;
+}
+
+.hero h1 span { color:var(--mint); }
 
 .hero p {
-  color: #b6c3c4;
-  font-size: 17px;
-  line-height: 1.8;
-  max-width: 540px;
-  margin-bottom: 35px;
+  color:#c1cecc;
+  font-size:16px;
+  line-height:1.9;
+  max-width:520px;
+  margin-bottom:34px;
+}
+
+.actions {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
 }
 
 .btn {
-  display: inline-block;
-  background: #26c6b5;
-  color: #061313;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 17px 27px;
-  border-radius: 5px;
-  transition: .3s;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  padding:16px 23px;
+  background:var(--mint);
+  color:#061716;
+  font-weight:800;
+  font-size:13px;
+  border-radius:4px;
+  transition:.3s;
 }
 
 .btn:hover {
-  background: #fff;
-  transform: translateY(-3px);
+  background:white;
+  transform:translateY(-3px);
 }
 
-section {
-  padding: 90px 8%;
+.btn-outline {
+  border:1px solid #ffffff55;
+  color:white;
+  padding:15px 22px;
+  border-radius:4px;
+  font-size:13px;
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 50px;
+.btn-outline:hover {
+  border-color:var(--mint);
+  color:var(--mint);
 }
 
-.section-title small {
-  color: #26c6b5;
-  letter-spacing: 3px;
+.trust-strip {
+  background:#0d2022;
+  border-top:1px solid #ffffff12;
+  border-bottom:1px solid #ffffff12;
 }
 
-.section-title h2 {
-  font-size: 36px;
-  margin-top: 15px;
+.trust-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  padding:27px 0;
+  gap:20px;
 }
 
-.services {
-  background: #0d191d;
+.trust-item {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  color:#d6e0de;
+  font-size:13px;
 }
+
+.trust-item strong {
+  color:var(--mint);
+  font-size:21px;
+}
+
+section { padding:105px 0; }
+
+.section-head {
+  max-width:650px;
+  margin-bottom:48px;
+}
+
+.section-head.center {
+  text-align:center;
+  margin:0 auto 50px;
+}
+
+.section-head h2 {
+  font-size:clamp(30px,5vw,44px);
+  line-height:1.2;
+  margin:15px 0;
+  letter-spacing:-1.5px;
+}
+
+.section-head p {
+  color:var(--muted);
+  line-height:1.9;
+  font-size:15px;
+}
+
+.services { background:var(--bg); }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
 .card {
-  padding: 35px 27px;
-  background: #132429;
-  border: 1px solid #ffffff12;
-  border-radius: 10px;
-  transition: .3s;
+  background:linear-gradient(145deg,#142d30,#0e2022);
+  border:1px solid #ffffff12;
+  padding:36px 28px;
+  border-radius:8px;
+  transition:.35s;
 }
 
 .card:hover {
-  transform: translateY(-7px);
-  border-color: #26c6b5;
+  transform:translateY(-8px);
+  border-color:#56e0c255;
 }
 
-.card .icon {
-  font-size: 35px;
-  margin-bottom: 22px;
+.card-icon {
+  width:57px;
+  height:57px;
+  display:grid;
+  place-items:center;
+  background:#56e0c218;
+  border:1px solid #56e0c244;
+  border-radius:6px;
+  font-size:26px;
+  margin-bottom:27px;
 }
 
 .card h3 {
-  margin-bottom: 15px;
-  font-size: 20px;
+  font-size:20px;
+  margin-bottom:14px;
 }
 
 .card p {
-  color: #aab8ba;
-  line-height: 1.7;
-  font-size: 14px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.9;
+}
+
+.card .more {
+  display:inline-block;
+  color:var(--mint);
+  font-size:12px;
+  font-weight:800;
+  margin-top:25px;
 }
 
 .about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+  background:#edf4f1;
+  color:#102224;
 }
 
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.about-photo {
+  min-height:440px;
+  border-radius:8px;
+  background:
+    linear-gradient(0deg,#07131544,transparent),
+    url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=85') center/cover;
+}
+
+.about .eyebrow { color:#168e7a; }
+
+.about .eyebrow:before { background:#168e7a; }
+
 .about h2 {
-  font-size: 38px;
-  margin: 18px 0;
+  font-size:clamp(31px,4vw,45px);
+  line-height:1.2;
+  margin:15px 0 22px;
+  letter-spacing:-1.5px;
 }
 
 .about p {
-  color: #afbdbe;
-  line-height: 1.9;
+  color:#536563;
+  line-height:1.95;
+  font-size:15px;
 }
 
-.about-box {
-  min-height: 300px;
-  border-radius: 15px;
-  background:
-    radial-gradient(circle at 50% 40%, #26c6b566, transparent 45%),
-    #132429;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 90px;
+.about-list {
+  display:grid;
+  gap:16px;
+  margin-top:28px;
+}
+
+.about-list div {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#183a37;
+  font-size:14px;
+  font-weight:700;
+}
+
+.about-list span {
+  color:#168e7a;
+  font-size:19px;
+}
+
+.process { background:var(--bg2); }
+
+.process-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.process-item {
+  padding:27px;
+  border-left:2px solid var(--mint);
+  background:#ffffff08;
+}
+
+.process-item small {
+  color:var(--mint);
+  font-size:12px;
+  letter-spacing:2px;
+  font-weight:800;
+}
+
+.process-item h3 {
+  margin:15px 0 10px;
+  font-size:19px;
+}
+
+.process-item p {
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.8;
 }
 
 .contact {
-  text-align: center;
-  background: linear-gradient(120deg, #102629, #081114);
+  text-align:center;
+  background:
+    radial-gradient(ellipse at 50% 100%,#155b5055,transparent 60%),
+    var(--bg);
 }
 
-.contact h2 {
-  font-size: 38px;
-  margin: 20px 0;
-}
+.contact .section-head { margin:0 auto 30px; }
 
-.contact p {
-  color: #b6c3c4;
-  margin-bottom: 30px;
-  line-height: 1.8;
+.contact .btn { margin-top:12px; }
+
+.contact-info {
+  margin-top:28px;
+  color:var(--muted);
+  font-size:13px;
 }
 
 footer {
-  padding: 35px 8%;
-  text-align: center;
-  color: #809194;
-  font-size: 13px;
-  border-top: 1px solid #ffffff15;
+  background:#040d0f;
+  border-top:1px solid #ffffff15;
+  padding:35px 0;
 }
 
-@media(max-width: 750px) {
-  header { padding: 0 5%; }
-  nav { gap: 12px; }
-  nav a { font-size: 11px; }
-  .hero { padding: 80px 6%; min-height: 540px; }
-  section { padding: 70px 6%; }
-  .cards { grid-template-columns: 1fr; }
-  .about { grid-template-columns: 1fr; gap: 30px; }
-  .about-box { min-height: 220px; }
-  .section-title h2, .contact h2 { font-size: 29px; }
+.footer-content {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+footer p {
+  color:#819492;
+  font-size:12px;
+  line-height:1.8;
+}
+
+footer .logo { font-size:18px; }
+
+.whatsapp-fixed {
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:90;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#25d366;
+  color:#fff;
+  font-size:27px;
+  box-shadow:0 8px 30px #0008;
+}
+
+@media(max-width:800px) {
+  .nav { height:70px; }
+  .menu { gap:13px; }
+  .menu a { font-size:11px; }
+  .nav-button { padding:10px; }
+  .hero { min-height:590px; background-position:60% center; }
+  .hero-content { padding:90px 0 120px; }
+  .hero h1 { letter-spacing:-2px; }
+  .trust-grid { grid-template-columns:1fr; gap:16px; }
+  .trust-item { justify-content:flex-start; }
+  section { padding:75px 0; }
+  .cards,.process-grid { grid-template-columns:1fr; }
+  .about-grid { grid-template-columns:1fr; gap:35px; }
+  .about-photo { min-height:290px; }
+}
+
+@media(max-width:430px) {
+  .container { width:90%; }
+  .logo { font-size:17px; }
+  .menu { gap:10px; }
+  .menu a { font-size:10px; }
+  .nav-button { display:none; }
+  .hero h1 { font-size:43px; }
+  .hero p { font-size:14px; }
+  .actions { align-items:stretch; flex-direction:column; }
+  .actions a { text-align:center; }
 }
 </style>
 </head>
@@ -232,89 +478,187 @@ footer {
 <body>
 
 <header>
-  <div class="logo">CLIMA<span>PREMIUM</span></div>
-  <nav>
-    <a href="#inicio">Início</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#contato">Contato</a>
-  </nav>
+  <div class="container nav">
+    <a class="logo" href="#inicio">CLIMA<span>PREMIUM.</span></a>
+
+    <nav class="menu">
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+      <a class="nav-button" href="#contato">Orçamento ↗</a>
+    </nav>
+  </div>
 </header>
 
 <main>
+
 <section class="hero" id="inicio">
-  <div class="hero-content">
-    <div class="tag">CONFORTO EM CADA AMBIENTE</div>
-    <h1>Seu conforto começa com o <span>clima ideal.</span></h1>
-    <p>
-      Soluções em climatização para sua casa ou empresa.
-      Instalação, manutenção e limpeza de ar-condicionado
-      com atendimento profissional.
-    </p>
-    <a href="#contato" class="btn">SOLICITAR ORÇAMENTO ↗</a>
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">CLIMATIZAÇÃO PROFISSIONAL</div>
+
+      <h1>O conforto que seu ambiente <span>merece.</span></h1>
+
+      <p>
+        Soluções em climatização pensadas para proporcionar
+        conforto, cuidado e praticidade para sua casa ou empresa.
+      </p>
+
+      <div class="actions">
+        <a class="btn" href="#contato">SOLICITAR ORÇAMENTO ↗</a>
+        <a class="btn-outline" href="#servicos">Conhecer serviços ↓</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="services" id="servicos">
-  <div class="section-title">
-    <small>O QUE FAZEMOS</small>
-    <h2>Nossos serviços</h2>
+<div class="trust-strip">
+  <div class="container trust-grid">
+    <div class="trust-item">
+      <strong>01</strong>
+      Atendimento personalizado
+    </div>
+    <div class="trust-item">
+      <strong>02</strong>
+      Soluções para seu ambiente
+    </div>
+    <div class="trust-item">
+      <strong>03</strong>
+      Cuidado em cada detalhe
+    </div>
   </div>
+</div>
 
-  <div class="cards">
-    <article class="card">
-      <div class="icon">❄️</div>
-      <h3>Instalação</h3>
-      <p>Instalação de equipamentos de ar-condicionado para ambientes residenciais e comerciais.</p>
-    </article>
+<section class="services" id="servicos">
+  <div class="container">
 
-    <article class="card">
-      <div class="icon">🔧</div>
-      <h3>Manutenção</h3>
-      <p>Manutenção preventiva e corretiva para cuidar do funcionamento do seu equipamento.</p>
-    </article>
+    <div class="section-head center">
+      <div class="eyebrow">NOSSAS SOLUÇÕES</div>
+      <h2>Climatização do jeito certo.</h2>
+      <p>Conheça os serviços disponíveis para manter seu ambiente confortável durante todo o ano.</p>
+    </div>
 
-    <article class="card">
-      <div class="icon">✨</div>
-      <h3>Higienização</h3>
-      <p>Limpeza e higienização de aparelhos para manter seu sistema de climatização em boas condições.</p>
-    </article>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-icon">❄</div>
+        <h3>Instalação</h3>
+        <p>Instalação de equipamentos de ar-condicionado para ambientes residenciais e comerciais.</p>
+        <a class="more" href="#contato">SOLICITAR INFORMAÇÕES ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⚙</div>
+        <h3>Manutenção</h3>
+        <p>Cuidados preventivos e corretivos para ajudar a preservar o funcionamento do seu equipamento.</p>
+        <a class="more" href="#contato">SOLICITAR INFORMAÇÕES ↗</a>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">✧</div>
+        <h3>Higienização</h3>
+        <p>Limpeza e higienização de sistemas de climatização conforme as necessidades do equipamento.</p>
+        <a class="more" href="#contato">SOLICITAR INFORMAÇÕES ↗</a>
+      </article>
+
+    </div>
   </div>
 </section>
 
 <section class="about" id="sobre">
-  <div>
-    <div class="tag">QUALIDADE E ATENÇÃO</div>
-    <h2>Conforto e cuidado em cada detalhe.</h2>
-    <p>
-      Trabalhamos para oferecer soluções de climatização
-      adequadas às necessidades de cada ambiente.
-      Entre em contato e descubra a melhor opção
-      para seu espaço.
-    </p>
-  </div>
+  <div class="container about-grid">
 
-  <div class="about-box">❄️</div>
+    <div class="about-photo"></div>
+
+    <div>
+      <div class="eyebrow">SOBRE NOSSO TRABALHO</div>
+      <h2>Mais conforto. Mais cuidado. Mais qualidade.</h2>
+
+      <p>
+        Cada ambiente tem suas próprias necessidades.
+        Por isso, buscamos oferecer soluções de climatização
+        adequadas ao espaço e às expectativas de cada cliente.
+        Entre em contato para conversar sobre seu projeto.
+      </p>
+
+      <div class="about-list">
+        <div><span>✓</span> Atendimento personalizado</div>
+        <div><span>✓</span> Soluções residenciais e comerciais</div>
+        <div><span>✓</span> Orientação para seu equipamento</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="process">
+  <div class="container">
+
+    <div class="section-head center">
+      <div class="eyebrow">COMO FUNCIONA</div>
+      <h2>Simples do primeiro contato à solução.</h2>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-item">
+        <small>ETAPA 01</small>
+        <h3>Entre em contato</h3>
+        <p>Conte o que você precisa e tire suas dúvidas pelo WhatsApp.</p>
+      </div>
+
+      <div class="process-item">
+        <small>ETAPA 02</small>
+        <h3>Avaliação</h3>
+        <p>Converse sobre seu ambiente e as necessidades do equipamento.</p>
+      </div>
+
+      <div class="process-item">
+        <small>ETAPA 03</small>
+        <h3>Solicite seu orçamento</h3>
+        <p>Receba as informações sobre a solução adequada para seu caso.</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <section class="contact" id="contato">
-  <div class="tag">VAMOS CONVERSAR?</div>
-  <h2>Pronto para ter mais conforto?</h2>
-  <p>
-    Entre em contato e solicite seu orçamento.
-    Estamos prontos para atender você.
-  </p>
-  <a class="btn" href="https://wa.me/5511999999999">
-    FALAR PELO WHATSAPP ↗
-  </a>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="eyebrow">FALE CONOSCO</div>
+      <h2>Seu próximo ambiente começa com uma conversa.</h2>
+      <p>Precisa de instalação, manutenção ou higienização? Entre em contato e solicite seu orçamento.</p>
+    </div>
+
+    <a class="btn" href="https://wa.me/5545999999999">
+      CONVERSAR PELO WHATSAPP ↗
+    </a>
+
+    <div class="contact-info">
+      Atendimento demonstrativo em Toledo – Paraná e região.
+    </div>
+
+  </div>
 </section>
+
 </main>
 
 <footer>
-  CLIMA PREMIUM · MODELO DEMONSTRATIVO
-  <br><br>
-  © 2026 - Todos os direitos reservados.
+  <div class="container footer-content">
+    <a class="logo" href="#inicio">CLIMA<span>PREMIUM.</span></a>
+    <p>
+      Modelo demonstrativo de site profissional.<br>
+      © 2026 Clima Premium. Todos os direitos reservados.
+    </p>
+  </div>
 </footer>
+
+<a class="whatsapp-fixed"
+   href="https://wa.me/5545999999999"
+   aria-label="WhatsApp">◉</a>
 
 </body>
 </html>
